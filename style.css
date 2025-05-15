@@ -1,21 +1,75 @@
 body {
+    width: 100vw;
+    height: 100vh;
+    font-family: system-ui;
+    font-size: 2.5vh;
+    color: #f5f5f5;
+    margin: 0;
     background-image: url("images/blue-painting-texture.jpg");
     background-size: cover;
-    background-color: #0099ff; /* in case the picture doesn't load */
-    padding: 10% 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+    /* background-color: #0099ff; in case the picture doesn't load */
+}
+
+nav {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+nav > button {
+    font-family: system-ui;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(245, 245, 245);
+    border: none;
+    border-radius: .5em;
+    padding: .5em;
+    background-color: transparent;   /*#f5f5f5;*/
+}
+
+
+nav > button:hover {
+    cursor: pointer;
+    color: rgba(245, 245, 245, 0.5);
 }
 
 main.home {
     display: flex;
     flex-direction: row-reverse;
-    height: 75%;
-    padding: 0 5%;
+    height: 80vh;
+    padding: 0 5vw;
 }
 
-main.home > section {
-    flex-basis: 50%;
+#home-text-container {
+    width: 50vw;
+    margin: 0 0 0 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+#home-text-container > h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+/* #home-text-container > p {
+    text-align: justify;
+} */
+
+#home-image-container {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main.home img {
     border-radius: 50%;
-    max-width: 100%;
+    max-width: 70%;
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, .2);
 }
