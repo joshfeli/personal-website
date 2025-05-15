@@ -1,7 +1,7 @@
 let activePanel
 // make the home panel visible; all others invisible by default
 window.addEventListener("load", event => {
-    document.querySelector("nav").style.display = "flex"
+    document.querySelector("nav").classList.remove("unloaded")
     makeVisible("home")
     activePanel = "home"
 })
@@ -9,7 +9,8 @@ window.addEventListener("load", event => {
 const buttons = document.querySelectorAll("nav > button")
 for (let button of buttons) {
     button.addEventListener("click", event => {
-        // reveal the corresponding content when its button is clicked
+        // switch visibility from active panel to
+        // the panel `button` represents
         let panelName = button.innerHTML.toLowerCase()
 
         makeInvisible(activePanel)
@@ -31,8 +32,10 @@ function makeVisible(panelName){
     const panelContent = document.querySelector(`main.${panelName}`)
     const panelButton = document.querySelector(`button.${panelName}`)
 
-    panelContent.style.display = "flex"
-    panelButton.style.display = "none"
+    panelContent.classList.add("active")
+    panelButton.classList.add("active")
+    // panelContent.style.display = "flex"
+    // panelButton.style.display = "none"
 }
 
 function makeInvisible(panelName){
@@ -44,6 +47,8 @@ function makeInvisible(panelName){
     const panelContent = document.querySelector(`main.${panelName}`)
     const panelButton = document.querySelector(`button.${panelName}`)
 
-    panelContent.style.removeProperty("display") // reset to default of "none"
-    panelButton.style.removeProperty("display") // reset to default of visible (in a flex display)
+    panelContent.classList.remove("active")
+    panelButton.classList.remove("active")
+    // panelContent.style.removeProperty("display") // reset to default of "none"
+    // panelButton.style.removeProperty("display") // reset to default of visible (in a flex display)
 }

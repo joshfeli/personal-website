@@ -12,11 +12,14 @@ body {
     /* background-color: #0099ff; in case the picture doesn't load */
 }
 
-nav {
-    display: none;
+nav.unloaded {
     /* the real nav display is flex: set to none just for startup,
     else the navbar loads for a second before the main content */
-    /* display: flex; */
+    display: none;
+}
+
+nav {
+    display: flex; 
     height: 20vh;
     justify-content: space-around;
     align-items: flex-start;
@@ -39,6 +42,10 @@ nav > button:hover {
     color: rgba(245, 245, 245, 0.5);
 }
 
+nav > button.active {
+    display: none;
+}
+
 /* default display for content is "off";
 display logic handled in JavaScript */
 main {
@@ -46,8 +53,12 @@ main {
     display: none;
 }
 
+main.active {
+    /* i.e., what main should display like when its panel is activated */
+    display: flex;
+}
+
 main.home {
-    /* display: flex; the default value for each <main> box*/
     flex-direction: row-reverse;
     padding: 0 5vw;
 }
