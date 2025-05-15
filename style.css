@@ -13,8 +13,11 @@ body {
 }
 
 nav {
+    display: none;
+    /* the real nav display is flex: set to none just for startup,
+    else the navbar loads for a second before the main content */
+    /* display: flex; */
     height: 20vh;
-    display: flex;
     justify-content: space-around;
     align-items: flex-start;
 }
@@ -36,10 +39,16 @@ nav > button:hover {
     color: rgba(245, 245, 245, 0.5);
 }
 
-main.home {
-    display: flex;
-    flex-direction: row-reverse;
+/* default display for content is "off";
+display logic handled in JavaScript */
+main {
     height: 80vh;
+    display: none;
+}
+
+main.home {
+    /* display: flex; the default value for each <main> box*/
+    flex-direction: row-reverse;
     padding: 0 5vw;
 }
 
@@ -56,10 +65,6 @@ main.home {
     font-size: 3em;
     text-align: center;
 }
-
-/* #home-text-container > p {
-    text-align: justify;
-} */
 
 #home-image-container {
     width: 40vw;
