@@ -11,6 +11,7 @@ body {
     background-blend-mode: darken;
 }
 
+/* ----- MAIN PANELS ----- */
 
 #main-container {
     height: 80vh;
@@ -72,6 +73,18 @@ main img {
     box-shadow: 0 0 1em 1em rgba(0, 0, 0, .2);
 }
 
+
+/* ----- SKILLS PANEL ----- */
+main.skills img {
+    border-radius: none;
+}
+ul {
+    list-style-type: none;
+}
+
+
+
+/* ----- NAVBAR ----- */
 
 nav.unloaded {
     /* the real nav display is flex: set to none just for startup,
