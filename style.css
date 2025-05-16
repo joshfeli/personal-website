@@ -23,10 +23,11 @@ ul {
 }
 
 /* default display for content is "none";
-display logic handled in JavaScript */
+display toggle handled in JavaScript */
 main {
     height: 100%;
     display: none;
+    padding: 0 5vw;
 }
 
 main.active {
@@ -46,7 +47,6 @@ main.active {
 
 main.home, main.contact {
     flex-direction: row-reverse;
-    padding: 0 5vw;
 }
 
 .text-container {
@@ -87,6 +87,10 @@ main img {
 
 /* ----- SKILLS PANEL ----- */
 main.skills {
+    padding: 0; /* override the default padding for `main` */
+}
+
+main.skills, main.about {
     flex-direction: column;
     justify-content: space-between;
 }
@@ -124,6 +128,13 @@ main.skills img {
     border-radius: 0;
     box-shadow: none;
     width: 8vw;
+}
+
+
+/* ----- ABOUT ----- */
+main.about > header > p {
+    text-align: center;
+    font-size: 1.5em
 }
 
 
