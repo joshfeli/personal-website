@@ -19,7 +19,7 @@ ul {
 /* ----- MAIN PANELS ----- */
 
 #main-container {
-    height: 80vh;
+    height: 80vh; /* to keep the container height constant during fade-ins */
 }
 
 /* default display for content is "none";
@@ -27,15 +27,21 @@ display logic handled in JavaScript */
 main {
     height: 100%;
     display: none;
-    opacity: 0;
-    transition-delay: opacity 1s ease-in 1s;
 }
 
 main.active {
     /* i.e., how main should display when its panel is activated */
     display: flex;
-    opacity: 1;
-    transition-delay: 0s;
+    animation: fade-in 1.5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 main.home, main.contact {
@@ -92,7 +98,7 @@ main.skills > h1 {
 h2 {
     font-size: 1.5em;
     text-align: center;
-    margin: .5em 0 0;
+    margin: .5em 0 .1em;
 }
 
 main.skills ul {
