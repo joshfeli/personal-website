@@ -1,4 +1,4 @@
-let activePanel
+let activePanel // for keeping track of which panel is visible
 
 // make the home panel visible; all others invisible by default
 window.addEventListener("load", event => {
@@ -33,7 +33,6 @@ function makeVisible(panelName){
     panelContent.classList.add("active")
     panelButton.classList.add("active")
 
-    // set the activePanel to be this panel
     activePanel = panelName
 }
 
