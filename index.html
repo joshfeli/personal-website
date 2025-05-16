@@ -4,30 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add a favicon! Maybe your own face? -->
-    <link rel="stylesheet" href="style.css"/>
     <!-- For icons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script defer src="main.js"></script>
     <title>Joshua Feliciano</title>
 </head>
 <body>
-    <main class="home">
-        <section id ="home-image-container">
-            <img src="images/headshot-professional.jpg" alt="Profile picture">
-        </section>
-        <section id="home-text-container">
-            <h1>Hi, there!</h1>
-            <p>
-                My name is Josh Feliciano: welcome to my personal website!
-                Find more info about me below by selecting "About," "Skills," or "Contact."
-            </p>
-        </section>
-    </main>
-    <main class="about"></main>
-    <main class="skills">
-        <i class="devicon-python-plain"></i>
-    </main>
-    <main class="contact"></main>
+    <div id="main-container">
+        <main class="home">
+            <section class="image-container">
+                <img src="images/headshot-professional.jpg" alt="Profile picture">
+            </section>
+            <section class="text-container">
+                <h1>Hi, there!</h1>
+                <p>
+                    My name is Josh Feliciano: welcome to my personal website!
+                    Find more info about me below by selecting "About," "Skills," or "Contact."
+                </p>
+            </section>
+        </main>
+        <main class="about"></main>
+        <main class="skills">
+            <i class="devicon-python-plain"></i>
+        </main>
+        <main class="contact">
+            <section class="image-container">
+                <img src="images/headshot-professional.jpg" alt="Profile picture">
+            </section>
+            <section class="text-container">
+                <h1>Contact</h1>
+                <ul>
+                    <li><a target="_blank" download="Resume_JoshuaFeliciano.pdf" href="assets/Resume_JoshuaFeliciano.pdf">Resume</a></li>
+                    <li><a target="_blank" href="mailto:joshfeli613@gmail.com">Email</a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/joshua-feliciano-654224168/">LinkedIn</a></li>
+                    <li><a target="_blank" href="https://github.com/joshfeli">GitHub</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
     <nav class="unloaded">
         <button class="home">HOME</button>
         <button class="about">ABOUT</button>

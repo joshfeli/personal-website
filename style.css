@@ -9,8 +9,69 @@ body {
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
-    /* background-color: #0099ff; in case the picture doesn't load */
 }
+
+
+#main-container {
+    height: 80vh;
+}
+
+/* default display for content is "none";
+display logic handled in JavaScript */
+main {
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition-delay: opacity 1s ease-in 1s;
+}
+
+main.active {
+    /* i.e., how main should display when its panel is activated */
+    display: flex;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+main.home, main.contact {
+    flex-direction: row-reverse;
+    padding: 0 5vw;
+}
+
+.text-container {
+    width: 50vw;
+    margin: 0 0 0 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+main.home > .text-container {
+    align-items: center;
+}
+
+main.contact > .text-container {
+    align-items: center;
+}
+
+.text-container > h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.image-container {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main img {
+    border-radius: 50%;
+    max-width: 70%;
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, .2);
+}
+
 
 nav.unloaded {
     /* the real nav display is flex: set to none just for startup,
@@ -44,48 +105,4 @@ nav > button:hover {
 
 nav > button.active {
     display: none;
-}
-
-/* default display for content is "off";
-display logic handled in JavaScript */
-main {
-    height: 80vh;
-    display: none;
-}
-
-main.active {
-    /* i.e., what main should display like when its panel is activated */
-    display: flex;
-}
-
-main.home {
-    flex-direction: row-reverse;
-    padding: 0 5vw;
-}
-
-#home-text-container {
-    width: 50vw;
-    margin: 0 0 0 10vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#home-text-container > h1 {
-    font-size: 3em;
-    text-align: center;
-}
-
-#home-image-container {
-    width: 40vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main.home img {
-    border-radius: 50%;
-    max-width: 70%;
-    box-shadow: 0 0 1em 1em rgba(0, 0, 0, .2);
 }
